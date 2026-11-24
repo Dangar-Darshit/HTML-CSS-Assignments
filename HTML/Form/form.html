@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>HTML Form Assignments</h1>
+    <p>Solutions for Questions 1 to 42</p>
+
+    <hr>
+
+    <h2>1. Basic Form Structure</h2>
+
+    <form action="/submit.php" method="post" autocomplete="on">
+        <label for="q1-name">Name:</label>
+        <input type="text" id="q1-name" name="name">
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <hr>
+
+
+    <h2>2. Form with GET Method</h2>
+
+    <form action="/search.php" method="get">
+        <label for="q2-search">Search:</label>
+        <input type="search" id="q2-search" name="search">
+
+        <button type="submit">Search</button>
+    </form>
+
+    <hr>
+
+
+    <h2>3. Form without Browser Validation</h2>
+
+    <form action="/submit.php" method="post" novalidate>
+        <label for="q3-name">Name:</label>
+        <input type="text" id="q3-name" name="name" required>
+
+        <br><br>
+
+        <label for="q3-email">Email:</label>
+        <input type="email" id="q3-email" name="email" required>
+
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <hr>
+
+
+    <h2>4. Understanding enctype – Default Value</h2>
+
+    <form action="/submit.php"
+          method="post"
+          enctype="application/x-www-form-urlencoded">
+
+        <label for="q4-name">Name:</label>
+        <input type="text" id="q4-name" name="name">
+
+        <br><br>
+
+        <label for="q4-email">Email:</label>
+        <input type="email" id="q4-email" name="email">
+
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <hr>
+
+
+    <h2>5. File Upload Form</h2>
+
+    <form action="/upload.php"
+          method="post"
+          enctype="multipart/form-data">
+
+        <label for="q5-file">Choose File:</label>
+        <input type="file" id="q5-file" name="file">
+
+        <br><br>
+
+        <button type="submit">Upload File</button>
+    </form>
+
+    <hr>
+
+
+
+    <h2>6. Form Using text/plain Encoding</h2>
+
+    <!-- text/plain encoding is rarely used in real projects. -->
+
+    <form action="/submit.php"
+          method="post"
+          enctype="text/plain">
+
+        <label for="q6-name">Name:</label>
+        <input type="text" id="q6-name" name="name">
+
+        <br><br>
+
+        <label for="q6-city">City:</label>
+        <input type="text" id="q6-city" name="city">
+
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <hr>
+
+
+
+    <h2>7. Form with Name and Target</h2>
+
+    <form name="userForm"
+          action="/submit.php"
+          method="post"
+          target="_blank">
+
+        <label for="q7-name">Name:</label>
+        <input type="text" id="q7-name" name="name">
+
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <hr>
+
+
+    <h2>8. Proper Use of Label</h2>
+
+    <form>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <hr>
+
+
+
+    <h2>9. Radio Button Group with Labels</h2>
+
+    <form>
+        <p>Gender:</p>
+
+        <input type="radio"
+               id="q9-male"
+               name="gender"
+               value="male"
+               checked>
+        <label for="q9-male">Male</label>
+
+        <br>
+
+        <input type="radio"
+               id="q9-female"
+               name="gender"
+               value="female">
+        <label for="q9-female">Female</label>
+
+        <br>
+
+        <input type="radio"
+               id="q9-other"
+               name="gender"
+               value="other">
+        <label for="q9-other">Other</label>
+    </form>
+
+    <hr>
+
+
+
+    <h2>10. Multiple Checkboxes</h2>
+
+    <form>
+        <p>Hobbies:</p>
+
+        <input type="checkbox"
+               id="q10-reading"
+               name="hobbies"
+               value="reading"
+               checked>
+        <label for="q10-reading">Reading</label>
+
+        <br>
+
+        <input type="checkbox"
+               id="q10-sports"
+               name="hobbies"
+               value="sports">
+        <label for="q10-sports">Sports</label>
+
+        <br>
+
+        <input type="checkbox"
+               id="q10-music"
+               name="hobbies"
+               value="music">
+        <label for="q10-music">Music</label>
+
+        <br>
+
+        <input type="checkbox"
+               id="q10-coding"
+               name="hobbies"
+               value="coding">
+        <label for="q10-coding">Coding</label>
+    </form>
+
+    <hr>
+
+
+
+    <h2>11. Drop-down List (Single Select)</h2>
+
+    <form>
+        <label for="q11-cars">Choose a car:</label>
+
+        <select id="q11-cars" name="cars">
+            <option value="toyota">Toyota</option>
+            <option value="honda">Honda</option>
+            <option value="bmw">BMW</option>
+        </select>
+    </form>
+
+    <hr>
+
+
+
+    <h2>12. Multi-select Drop-down</h2>
+
+    <form>
+        <label for="q12-cars">Choose cars:</label>
+
+        <select id="q12-cars"
+                name="cars"
+                multiple
+                size="3">
+
+            <option value="toyota">Toyota</option>
+            <option value="honda">Honda</option>
+            <option value="bmw">BMW</option>
+            <option value="audi">Audi</option>
+
+        </select>
+    </form>
+
+    <hr>
+
+
+    <h2>13. Grouped Options with optgroup</h2>
+
+    <form>
+        <label for="q13-fruits">Choose a fruit:</label>
+
+        <select id="q13-fruits" name="fruit">
+
+            <optgroup label="Tropical Fruits">
+                <option value="mango">Mango</option>
+                <option value="banana">Banana</option>
+                <option value="pineapple">Pineapple</option>
+            </optgroup>
+
+            <optgroup label="Other Fruits">
+                <option value="apple">Apple</option>
+                <option value="orange">Orange</option>
+                <option value="grapes">Grapes</option>
+            </optgroup>
+
+        </select>
+    </form>
+
+    <hr>
+
+
+
+    <h2>14. Multi-line Text Area</h2>
+
+    <form>
+        <label for="q14-comments">Comments:</label>
+
+        <br>
+
+        <textarea id="q14-comments"
+                  name="comments"
+                  rows="4"
+                  cols="50"
+                  placeholder="Enter your comments here..."></textarea>
+    </form>
+
+    <hr>
+
+
+
+    <h2>15. Button Types</h2>
+
+    <form>
+        <button type="submit">Submit</button>
+
+        <button type="reset">Reset</button>
+
+        <button type="button">Normal Button</button>
+    </form>
+
+    <hr>
+
+
+
+    <h2>16. Fieldset and Legend</h2>
+
+    <form>
+
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <label for="q16-name">Name:</label>
+            <input type="text" id="q16-name" name="name">
+
+            <br><br>
+
+            <label for="q16-email">Email:</label>
+            <input type="email" id="q16-email" name="email">
+        </fieldset>
+
+    </form>
+
+    <hr>
+
+
+    <h2>17. Disabled Fieldset</h2>
+
+    <form>
+
+        <fieldset disabled>
+            <legend>Login Information</legend>
+
+            <label for="q17-username">Username:</label>
+            <input type="text" id="q17-username" name="username">
+
+            <br><br>
+
+            <label for="q17-password">Password:</label>
+            <input type="password" id="q17-password" name="password">
+        </fieldset>
+
+    </form>
+
+    <hr>
+
+
+
+    <h2>18. Datalist for Autocomplete Suggestions</h2>
+
+    <form>
+
+        <label for="q18-browser">Choose Browser:</label>
+
+        <input list="browsers"
+               id="q18-browser"
+               name="browser">
+
+        <datalist id="browsers">
+            <option value="Google Chrome">
+            <option value="Mozilla Firefox">
+            <option value="Microsoft Edge">
+            <option value="Safari">
+        </datalist>
+
+    </form>
+
+    <hr>
+
+
+
+    <h2>19. Password Field with Constraints</h2>
+
+    <form>
+
+        <label for="q19-password">Password:</label>
+
+        <input type="password"
+               id="q19-password"
+               name="password"
+               required
+               minlength="8">
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <hr>
+
+
+
+    <h2>20. Email Input with Multiple Values</h2>
+
+    <form>
+
+        <label for="q20-email">Email Addresses:</label>
+
+        <input type="email"
+               id="q20-email"
+               name="emails"
+               multiple
+               placeholder="email1@example.com, email2@example.com">
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <hr>
+
+
+
+    <h2>21. Date Picker with Range</h2>
+
+    <form>
+
+        <label for="q21-date">Select Date:</label>
+
+        <input type="date"
+               id="q21-date"
+               name="date"
+               min="2023-01-01"
+               max="2023-12-31">
+
+    </form>
+
+    <hr>
+
+
+
+    <h2>22. Number Input with Step</h2>
+
+    <form>
+
+        <label for="q22-quantity">Quantity:</label>
+
+        <input type="number"
+               id="q22-quantity"
+               name="quantity"
+               min="1"
+               max="10"
+               step="1">
+
+    </form>
+
+    <hr>
+
+
+
+    <h2>23. Range Slider</h2>
+
+    <form>
+
+        <label for="q23-volume">Volume:</label>
+
+        <input type="range"
+               id="q23-volume"
+               name="volume"
+               min="0"
+               max="100"
+               value="50">
+
+    </form>
+
+    <hr>
+
+
+    <h2>24. File Input with Restrictions</h2>
+
+    <form action="/upload.php"
+          method="post"
+          enctype="multipart/form-data">
+
+        <label for="q24-file">Upload PDF or DOCX:</label>
+
+        <input type="file"
+               id="q24-file"
+               name="document"
+               accept=".pdf,.docx"
+               required>
+
+        <br><br>
+
+        <button type="submit">Upload</button>
+
+    </form>
+
+    <hr>
+
+
+
+    <h2>25. Hidden Input</h2>
+
+    <form action="/submit.php" method="post">
+
+        <input type="hidden"
+               name="session_token"
+               value="ABC123XYZ">
+
+        <label for="q25-name">Name:</label>
+        <input type="text" id="q25-name" name="name">
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <hr>
+
+
+
+    <h2>26. Color Picker</h2>
+
+    <form>
+
+        <label for="q26-color">Favorite Color:</label>
+
+        <input type="color"
+               id="q26-color"
+               name="color"
+               value="#ff0000">
+
+    </form>
+
+    <hr>
+
+
+
+    <h2>27. Telephone Input with Pattern</h2>
+
+    <form>
+
+        <label for="q27-phone">Phone Number:</label>
+
+        <input type="tel"
+               id="q27-phone"
+               name="phone"
+               pattern="[0-9]{10}"
+               placeholder="Enter 10-digit phone number">
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <hr>
+
+
+
+    <h2>28. URL Input</h2>
+
+    <form>
+
+        <label for="q28-url">Website:</label>
+
+        <input type="url"
+               id="q28-url"
+               name="website"
+               required
+               placeholder="https://example.com">
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <hr>
+
+
+    <h2>29. Search Field with Autofocus</h2>
+
+    <form action="/search.php" method="get">
+
+        <label for="q29-search">Search:</label>
+
+        <input type="search"
+               id="q29-search"
+               name="search"
+               autofocus
+               placeholder="Search here...">
+
+        <button type="submit">Search</button>
+
+    </form>
+
+    <hr>
+
+
+    <h2>30. Using the form Attribute</h2>
+
+    <form id="q30-form"
+          action="/submit.php"
+          method="post">
+
+        <label for="q30-name">Name:</label>
+        <input type="text"
+               id="q30-name"
+               name="name">
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <!-- This input is outside the form but belongs to q30-form -->
+    <br>
+
+    <label for="q30-email">Email:</label>
+    <input type="email"
+           id="q30-email"
+           name="email"
+           form="q30-form">
+
+    <hr>
+
+
+    <h2>31. formaction Override</h2>
+
+    <form action="/default.php" method="post">
+
+        <label for="q31-name">Name:</label>
+        <input type="text" id="q31-name" name="name">
+
+        <br><br>
+
+        <button type="submit">
+            Default Action
+        </button>
+
+        <button type="submit"
+                formaction="/special.php">
+            Special Action
+        </button>
+
+    </form>
+
+    <hr>
+
+
+
+    <h2>32. formmethod Override</h2>
+
+    <form action="/submit.php" method="post">
+
+        <label for="q32-name">Name:</label>
+        <input type="text" id="q32-name" name="name">
+
+        <br><br>
+
+        <button type="submit">
+            Submit with POST
+        </button>
+
+        <button type="submit"
+                formmethod="get">
+            Submit with GET
+        </button>
+
+    </form>
+
+    <hr>
+
+
+    <h2>33. formnovalidate</h2>
+
+    <form action="/register.php" method="post">
+
+        <label for="q33-name">Name:</label>
+        <input type="text"
+               id="q33-name"
+               name="name"
+               required>
+
+        <br><br>
+
+        <label for="q33-email">Email:</label>
+        <input type="email"
+               id="q33-email"
+               name="email"
+               required>
+
+        <br><br>
+
+        <label for="q33-password">Password:</label>
+        <input type="password"
+               id="q33-password"
+               name="password"
+               required
+               minlength="8">
+
+        <br><br>
+
+        <button type="submit">
+            Register
+        </button>
+
+        <button type="submit"
+                formnovalidate>
+            Save as Draft
+        </button>
+
+    </form>
+
+    <hr>
+
+
+
+    <h2>34. formtarget</h2>
+
+    <form action="/preview.php"
+          method="post"
+          target="_self">
+
+        <label for="q34-name">Name:</label>
+        <input type="text" id="q34-name" name="name">
+
+        <br><br>
+
+        <button type="submit">
+            Submit
+        </button>
+
+        <button type="submit"
+                formtarget="_blank">
+            Preview in New Tab
+        </button>
+
+    </form>
+
+    <hr>
+
+
+
+    <h2>35. Complete Login Form</h2>
+
+    <form action="/login.php"
+          method="post">
+
+        <label for="q35-username">Username:</label>
+        <input type="text"
+               id="q35-username"
+               name="username"
+               required>
+
+        <br><br>
+
+        <label for="q35-password">Password:</label>
+        <input type="password"
+               id="q35-password"
+               name="password"
+               required
+               minlength="8">
+
+        <br><br>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <hr>
+
+
+
+    <h2>36. Complete Registration Form with Fieldsets</h2>
+
+    <form action="/register.php"
+          method="post">
+
+        <fieldset>
+
+            <legend>Personal Information</legend>
+
+            <label for="q36-name">Name:</label>
+            <input type="text"
+                   id="q36-name"
+                   name="name"
+                   required>
+
+            <br><br>
+
+            <label for="q36-email">Email:</label>
+            <input type="email"
+                   id="q36-email"
+                   name="email"
+                   required>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+
+            <legend>Preferences</legend>
+
+            <input type="checkbox"
+                   id="q36-newsletter"
+                   name="newsletter"
+                   value="yes">
+
+            <label for="q36-newsletter">
+                Subscribe to Newsletter
+            </label>
+
+        </fieldset>
+
+        <br>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+    <hr>
+
+
+
+    <h2>37. Contact Us Form</h2>
+
+    <form action="/contact.php"
+          method="post">
+
+        <label for="q37-name">Name:</label>
+        <input type="text"
+               id="q37-name"
+               name="name"
+               required>
+
+        <br><br>
+
+        <label for="q37-email">Email:</label>
+        <input type="email"
+               id="q37-email"
+               name="email"
+               required>
+
+        <br><br>
+
+        <label for="q37-message">Message:</label>
+
+        <br>
+
+        <textarea id="q37-message"
+                  name="message"
+                  rows="6"
+                  cols="50"
+                  required></textarea>
+
+        <br><br>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+
+    <hr>
+
+
+    <h2>38. Survey / Feedback Form</h2>
+
+    <form action="/feedback.php"
+          method="post">
+
+        <label for="q38-satisfaction">
+            Satisfaction (1-10):
+        </label>
+
+        <input type="range"
+               id="q38-satisfaction"
+               name="satisfaction"
+               min="1"
+               max="10"
+               value="5">
+
+        <br><br>
+
+        <p>Would you recommend us?</p>
+
+        <input type="radio"
+               id="q38-yes"
+               name="recommend"
+               value="yes">
+
+        <label for="q38-yes">Yes</label>
+
+        <br>
+
+        <input type="radio"
+               id="q38-no"
+               name="recommend"
+               value="no">
+
+        <label for="q38-no">No</label>
+
+        <br><br>
+
+        <label for="q38-comments">Comments:</label>
+
+        <br>
+
+        <textarea id="q38-comments"
+                  name="comments"
+                  rows="5"
+                  cols="50"></textarea>
+
+        <br><br>
+
+        <button type="submit">Submit Feedback</button>
+
+    </form>
+
+    <hr>
+
+
+    <h2>39. Complete File Upload Form</h2>
+
+    <form action="/upload.php"
+          method="post"
+          enctype="multipart/form-data">
+
+        <label for="q39-resume">
+            Resume:
+        </label>
+
+        <input type="file"
+               id="q39-resume"
+               name="resume"
+               accept=".pdf,.docx"
+               required>
+
+        <br><br>
+
+        <label for="q39-photo">
+            Profile Photo:
+        </label>
+
+        <input type="file"
+               id="q39-photo"
+               name="photo"
+               accept="image/*">
+
+        <br><br>
+
+        <button type="submit">Upload</button>
+
+    </form>
+
+    <hr>
+
+    <h2>40. Search Form Using GET</h2>
+
+    <form action="/search.php"
+          method="get">
+
+        <label for="q40-search">Search:</label>
+
+        <input type="search"
+               id="q40-search"
+               name="query"
+               autofocus
+               placeholder="Search the website...">
+
+        <button type="submit">Search</button>
+
+    </form>
+
+    <hr>
+
+
+
+    <h2>41. Advanced Form Combining Many Features</h2>
+
+    <form action="/job-application.php"
+          method="post"
+          enctype="multipart/form-data">
+
+        <fieldset>
+
+            <legend>Personal Details</legend>
+
+            <label for="q41-name">Name:</label>
+            <input type="text"
+                   id="q41-name"
+                   name="name"
+                   required>
+
+            <br><br>
+
+            <label for="q41-email">Email:</label>
+            <input type="email"
+                   id="q41-email"
+                   name="email"
+                   required>
+
+            <br><br>
+
+            <label for="q41-phone">Phone:</label>
+            <input type="tel"
+                   id="q41-phone"
+                   name="phone"
+                   pattern="[0-9]{10}"
+                   placeholder="10-digit phone number">
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+
+            <legend>Experience</legend>
+
+            <label for="q41-experience">
+                Work Experience:
+            </label>
+
+            <br>
+
+            <textarea id="q41-experience"
+                      name="experience"
+                      rows="6"
+                      cols="50"
+                      placeholder="Describe your experience..."></textarea>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+
+            <legend>Resume</legend>
+
+            <label for="q41-resume">
+                Upload Resume:
+            </label>
+
+            <input type="file"
+                   id="q41-resume"
+                   name="resume"
+                   accept=".pdf"
+                   required>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+
+            <legend>Employment Type</legend>
+
+            <input type="radio"
+                   id="q41-fulltime"
+                   name="employment_type"
+                   value="full-time">
+
+            <label for="q41-fulltime">
+                Full Time
+            </label>
+
+            <br>
+
+            <input type="radio"
+                   id="q41-parttime"
+                   name="employment_type"
+                   value="part-time">
+
+            <label for="q41-parttime">
+                Part Time
+            </label>
+
+            <br>
+
+            <input type="radio"
+                   id="q41-contract"
+                   name="employment_type"
+                   value="contract">
+
+            <label for="q41-contract">
+                Contract
+            </label>
+
+        </fieldset>
+
+        <br>
+
+        <input type="checkbox"
+               id="q41-terms"
+               name="terms"
+               value="accepted"
+               required>
+
+        <label for="q41-terms">
+            I agree to the Terms and Conditions.
+        </label>
+
+        <br><br>
+
+        <button type="submit">
+            Apply Now
+        </button>
+
+        <button type="submit"
+                formnovalidate>
+            Save Draft
+        </button>
+
+    </form>
+
+    <hr>
+
+
+
+    <h2>42. Form Demonstrating All Major Override Attributes</h2>
+
+    <form id="q42-form"
+          action="/default.php"
+          method="post"
+          target="_self">
+
+        <label for="q42-name">Name:</label>
+
+        <input type="text"
+               id="q42-name"
+               name="name"
+               required>
+
+        <br><br>
+
+        <label for="q42-email">Email:</label>
+
+        <input type="email"
+               id="q42-email"
+               name="email"
+               required>
+
+        <br><br>
+
+        <!-- Default action, method and target -->
+        <button type="submit">
+            Default Submit
+        </button>
+
+        <!-- formaction override -->
+        <button type="submit"
+                formaction="/alternate.php">
+            Override Action
+        </button>
+
+        <!-- formmethod override -->
+        <button type="submit"
+                formmethod="get">
+            Override Method
+        </button>
+
+        <!-- formnovalidate override -->
+        <button type="submit"
+                formnovalidate>
+            Skip Validation
+        </button>
+
+        <!-- formtarget override -->
+        <button type="submit"
+                formtarget="_blank">
+            Open in New Tab
+        </button>
+
+    </form>
+
+</body>
+</html>
